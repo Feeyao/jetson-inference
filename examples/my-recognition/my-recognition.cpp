@@ -86,6 +86,8 @@ int main( int argc, char** argv )
 		// if Classify() returned < 0, an error occurred
 		printf("failed to classify image\n");
 	}
+
+	CUDA(cudaFreeHost(imgPtr));
 	
 	// free the network's resources before shutting down
 	delete net;
